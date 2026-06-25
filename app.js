@@ -19,7 +19,7 @@ const VIEWS = {
   spedizioni: { id: 'spedizioni', label: 'Registrazione spedizione' },
 };
 
-// Dati dimostrativi: un profilo per ruolo operativo piu' un account admin
+// Dati dimostrativi: un profilo per ruolo operativo + un account admin 
 // con accesso completo a tutte le viste.
 const DEMO_USERS = [
   {
@@ -322,7 +322,7 @@ function registraSpedizione(codice, cliente, dataSpedizione, quantitaSpedita, us
   const lots = loadLots();
   const lotto = lots.find((l) => l.codice === codice);
   // Vincolo esplicito: spedibile solo se conforme, verificato di nuovo qui
-  // anche se la UI mostra gia' solo i lotti in questo stato.
+  // anche se la UI mostra già solo i lotti in questo stato.
   if (!lotto || lotto.stato !== STATI.CONFORME.id) return null;
 
   lotto.spedizione = {
@@ -454,8 +454,8 @@ const VIEW_RENDERERS = {
   consultazione: renderConsultazioneView,
 };
 
-// Codice del lotto su cui e' aperto un form di azione (conclusione, esito,
-// verifica). Una sola riga puo' essere "espansa" alla volta per vista.
+// Codice del lotto su cui è aperto un form di azione (conclusione, esito,
+// verifica). Una sola riga può essere "espansa" alla volta per vista.
 let activeRowAction = null;
 
 // Periodo selezionato in dashboard e ricerca in sospeso quando si salta
