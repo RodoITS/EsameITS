@@ -69,9 +69,9 @@ const DEMO_USERS = [
   },
   {
     id: 'u06',
-    name: 'Amministratore di sistema',
+    name: 'Boss',
     roleId: 'admin',
-    roleLabel: 'Amministratore',
+    roleLabel: 'Amministratore di sistema',
     code: 'ADMIN-00',
     group: 'Amministrazione',
     views: Object.keys(VIEWS),
